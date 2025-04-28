@@ -1,1 +1,1 @@
-# equipoSeis
+# DogApp
