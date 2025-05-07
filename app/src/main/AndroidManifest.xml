@@ -5,7 +5,7 @@
         android:label="Equipo Seis"
         android:icon="@mipmap/ic_launcher">
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
