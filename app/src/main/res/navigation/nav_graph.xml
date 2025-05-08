@@ -8,5 +8,15 @@
         android:id="@+id/loginFragment"
         android:name="com.equiposeis.LoginFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_AdministradorCFragment"
+            app:destination="@id/fragment_administradorCitas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/administradorCFragment"
+        android:name="com.equiposeis.AdministradorCFragment"
+        android:label="Administrador"
+        tools:layout="@layout/fragment_administradorCitas" />
 </navigation>
