@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/login_colorBg"
     android:padding="24dp">
 
-    <EditText
-        android:id="@+id/editTextUsername"
+    <ImageView
+        android:id="@+id/imageLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Usuario"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
+        android:layout_height="300dp"
+        android:translationX="100dp"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/perro"
         android:layout_marginTop="16dp" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
-        android:layout_marginTop="24dp" />
-</LinearLayout>
+    <TextView
+        android:id="@+id/loginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:fontFamily="@font/grota_sans_black"
+        android:gravity="center"
+        android:text="@string/login_title"
+        android:textColor="@color/login_colorT"
+        android:textSize="68sp"
+        android:translationX="50dp"
+        android:translationY="250dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/fingerprint_login"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:translationY="350dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/fingerprint" />
+
+</FrameLayout>
