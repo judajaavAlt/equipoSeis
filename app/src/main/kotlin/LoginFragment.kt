@@ -51,8 +51,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             })
 
         val promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Autenticación biometrica")
-            .setSubtitle("Escanea tu huella para continuar")
+            .setTitle("Autenticación con Biometría")
+            .setSubtitle("Ingrese su huella digital")
             .setNegativeButtonText("Cancelar")
             .build()
 

@@ -7,16 +7,14 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.equiposeis.LoginFragment"
-        android:label="Login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_AdministradorCFragment"
-            app:destination="@id/fragment_administradorCitas" />
+            app:destination="@id/administradorCFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/administradorCFragment"
         android:name="com.equiposeis.AdministradorCFragment"
-        android:label="Administrador"
-        tools:layout="@layout/fragment_administradorCitas" />
+        tools:layout="@layout/fragment_administrador_citas" />
 </navigation>

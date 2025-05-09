@@ -1,11 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.equiposeis">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="Equipo Seis"
-        android:icon="@mipmap/ic_launcher">
+        android:label="DogApp"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.EquipoSeis">
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.equiposeis.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

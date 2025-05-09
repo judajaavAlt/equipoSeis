@@ -1,3 +1,4 @@
 <resources>
     <string name="login_title">DogApp</string>
+    <string name="hola">Hola soy el administrador de citas</string>
 </resources>
