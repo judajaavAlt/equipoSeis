@@ -74,28 +74,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/buttons_color"
-                    android:background="@drawable/rounded_button_detalle_cita"/>
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/login_colorBg"
-                    android:background="@drawable/rounded_button_detalle_cita"/>
-            </LinearLayout>
+
 
         </RelativeLayout>
 
