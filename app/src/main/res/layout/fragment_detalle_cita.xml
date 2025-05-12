@@ -11,11 +11,39 @@
             android:layout_height="match_parent"
             android:context=".fragments.DetalleCitaFragments"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp">
 
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbarDetalleCita"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/toolbar_detalle_cita">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Pepito"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/login_colorT"
+                        android:layout_gravity="center"/>
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="start"
+                        android:backgroundTint="@color/login_colorBg"
+                        android:text="<"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/buttons_color"/>
+
+                </androidx.appcompat.widget.Toolbar>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/infoDetalleCita"
@@ -81,7 +109,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:backgroundTint="@color/login_colorBg">
+                android:backgroundTint="@color/login_colorBg"
+                android:layout_below="@+id/toolbarDetalleCita">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -109,7 +138,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:backgroundTint="@color/buttons_color"
-                    android:background="@drawable/rounded_button_detalle_cita"/>
+                    android:background="@drawable/rounded_button_detalle_cita"
+                    android:text="B"/>
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -118,7 +148,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:backgroundTint="@color/login_colorBg"
-                    android:background="@drawable/rounded_button_detalle_cita"/>
+                    android:background="@drawable/rounded_button_detalle_cita"
+                    android:text="E"/>
             </LinearLayout>
 
         </RelativeLayout>
