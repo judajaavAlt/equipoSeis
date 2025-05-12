@@ -139,7 +139,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:backgroundTint="@color/buttons_color"
-                    android:background="@drawable/rounded_button_detalle_cita"
+                    android:background="@drawable/button_detalle_cita"
                     android:text="B"/>
                 <View
                     android:layout_width="0dp"
@@ -149,7 +149,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:backgroundTint="@color/login_colorBg"
-                    android:background="@drawable/rounded_button_detalle_cita"
+                    android:background="@drawable/button_detalle_cita"
                     android:text="E"/>
             </LinearLayout>
 
