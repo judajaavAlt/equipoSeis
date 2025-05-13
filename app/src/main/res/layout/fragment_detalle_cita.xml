@@ -39,6 +39,7 @@
                         android:layout_gravity="start"
                         android:backgroundTint="@color/login_colorBg"
                         android:src="@drawable/ic_back_arrow"
+                        android:contentDescription="Atrás"
                         />
 
                 </androidx.appcompat.widget.Toolbar>
