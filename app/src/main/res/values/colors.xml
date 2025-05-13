@@ -2,4 +2,5 @@
     <color name="login_colorBg">#20282F</color>
     <color name="login_colorT">#FEFEFE</color>
     <color name="buttons_color">#EE575F</color>
+    <color name="bg_color">#FAF5FF</color>
 </resources>
