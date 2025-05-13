@@ -33,15 +33,14 @@
                         android:textColor="@color/login_colorT"
                         android:layout_gravity="center"/>
 
-                    <Button
+                    <ImageButton
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_gravity="start"
                         android:backgroundTint="@color/login_colorBg"
-                        android:text="<"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/buttons_color"/>
+                        android:src="@drawable/ic_back_arrow"
+                        android:contentDescription="Atrás"
+                        />
 
                 </androidx.appcompat.widget.Toolbar>
 
@@ -57,6 +56,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="id"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -135,22 +142,24 @@
                 android:orientation="horizontal"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp">
-                <Button
+                <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:src="@drawable/ic_delete"
                     android:backgroundTint="@color/buttons_color"
                     android:background="@drawable/button_detalle_cita"
-                    android:text="B"/>
+                    android:contentDescription="Borrar"/>
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
-                <Button
+                <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:src="@drawable/ic_edit"
                     android:backgroundTint="@color/login_colorBg"
                     android:background="@drawable/button_detalle_cita"
-                    android:text="E"/>
+                    android:contentDescription="Editar"/>
             </LinearLayout>
 
         </RelativeLayout>
