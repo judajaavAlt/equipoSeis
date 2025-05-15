@@ -1,13 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/textHola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hola"
-        android:textSize="24sp" />
-</FrameLayout>
+    <!-- Encabezado con esquina inferior izquierda curva -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/header_background">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrador\nde citas"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"/>
+
+        <ImageView
+            android:id="@+id/imagen_perro"
+            android:layout_width="88dp"
+            android:layout_height="115dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="18dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/perro" />
+
+        <TextView
+            android:id="@+id/dogapp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DogApp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_below="@id/imagen_perro"
+            android:layout_alignEnd="@id/imagen_perro"
+            android:layout_marginTop="4dp" />
+    </RelativeLayout>
+
+    <!-- Lista de ítems -->
+    <ScrollView
+        android:layout_below="@id/header"
+        android:layout_above="@id/fab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+
+        <LinearLayout
+            android:id="@+id/listaCitasContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:divider="?android:attr/dividerHorizontal"
+            android:showDividers="middle" />
+    </ScrollView>
+
+    <!-- Botón flotante -->
+    <ImageButton
+        android:id="@+id/fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/fab_background"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Agregar cita" />
+</RelativeLayout>
