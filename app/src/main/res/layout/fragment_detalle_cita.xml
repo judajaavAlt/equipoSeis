@@ -35,6 +35,7 @@
                     android:layout_gravity="center"/>
 
                 <ImageButton
+                    android:id="@+id/btnVolverDetalleCita"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="start"

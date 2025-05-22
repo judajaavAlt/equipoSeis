@@ -17,4 +17,10 @@
         android:id="@+id/administradorCFragment"
         android:name="com.equiposeis.AdministradorCFragment"
         tools:layout="@layout/fragment_administrador_citas" />
+    <fragment
+        android:id="@+id/detalleCitaFragment"
+        android:name="com.equiposeis.DetalleCitaFragment"
+        android:label="DetalleCitaFragment"
+        tools:layout="@layout/fragment_detalle_cita">
+    </fragment>
 </navigation>
