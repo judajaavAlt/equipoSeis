@@ -42,8 +42,8 @@
         android:name="com.equiposeis.EditarCitaFragment"
         tools:layout="@layout/fragment_editar_cita">
         <action
-            android:id="@+id/action_editarCitaFragment_to_administradorCFragment"
-            app:destination="@id/administradorCFragment" />
+            android:id="@+id/action_editarCitaFragment_to_detalleCitaFragment"
+            app:destination="@id/detalleCitaFragment" />
     </fragment>
 
 </navigation>
