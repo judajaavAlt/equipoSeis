@@ -110,5 +110,25 @@ android:layout_marginHorizontal="16dp"
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
+    <!--Edit button-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/guardarCitaButton"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@null"
+        android:drawableStart="@drawable/ic_pen"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="7dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="7dp"
+        android:text="@string/editar_cita"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="190dp" />
 </LinearLayout>
