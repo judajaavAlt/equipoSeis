@@ -10,10 +10,12 @@ import android.widget.TextView
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 
+
 class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
     private var _binding: FragmentAdministradorCitasBinding? = null
     private val binding get() = _binding!!
+
 
     data class Cita(
         val id: Int,
