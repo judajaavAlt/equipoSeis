@@ -44,7 +44,17 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
         val listaCitas = listOf(
             Cita(1, "Max", "Fiebre y tos"),
             Cita(2, "Luna", "Dolor en la pata"),
-            Cita(3, "Rocky", "Vómitos")
+            Cita(3, "Rocky", "Vómitos"),
+            Cita(4, "Max", "Fiebre"),
+            Cita(5, "Luna", "Dolor"),
+            Cita(6, "Rocky", "Vómitos"),
+            Cita(7, "Max", "Fiebre y tos"),
+            Cita(8, "Luna", "Dolor en la pata"),
+            Cita(9, "Rocky", "Vómitos"),
+            Cita(10, "Max", "Fiebre"),
+            Cita(11, "Luna", "Dolor"),
+            Cita(12, "Rocky", "Vómitos")
+
         )
 
         for (cita in listaCitas) {
