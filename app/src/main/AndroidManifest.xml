@@ -3,7 +3,8 @@
     <application
         android:label="dogApp"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/Theme.EquipoSeis">
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Base.Theme.MyApplication">
 
         <activity android:name="com.equiposeis.MainActivity"
             android:exported="true">

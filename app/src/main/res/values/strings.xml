@@ -1,4 +1,20 @@
 <resources>
     <string name="login_title">DogApp</string>
     <string name="hola">Hola soy el administrador de citas</string>
+    <string name="nueva_cita">Nueva Cita</string>
+    <string name="nombre_de_la_mascota">Nombre de la mascota</string>
+    <string name="raza">Raza</string>
+    <string name="nombre_del_propietario">Nombre del propietario</string>
+    <string name="telefono">Teléfono</string>
+    <string name="atras">Atrás</string>
+    <string name="guardar_cita">Guardar Cita</string>
+    <string name="sintomas">Síntomas</string>
+    <string-array name="sintomas">
+        <item>Solo duerme</item>
+        <item>No come</item>
+        <item>Fractura extremidad</item>
+        <item>Tiene pulgas</item>
+        <item>Tiene garrapatas</item>
+        <item>Bota demasiado pelo</item>
+    </string-array>
 </resources>

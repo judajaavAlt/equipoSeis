@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/LayoutDetalleCita"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:context=".fragments.DetalleCitaFragments"
             android:orientation="vertical"
             android:paddingRight="16dp"
             android:paddingLeft="16dp"
@@ -17,31 +19,32 @@
             tools:layout_editor_absoluteY="0dp">
 
             <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbarDetalleCita"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@drawable/toolbar_detalle_cita">
+                android:id="@+id/toolbarDetalleCita"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/toolbar_detalle_cita">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="Pepito"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/login_colorT"
-                        android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Pepito"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/login_colorT"
+                    android:layout_gravity="center"/>
 
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="start"
-                        android:backgroundTint="@color/login_colorBg"
-                        android:src="@drawable/ic_back_arrow"
-                        android:contentDescription="Atrás"
-                        />
+                <ImageButton
+                    android:id="@+id/btnVolverDetalleCita"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="start"
+                    android:backgroundTint="@color/login_colorBg"
+                    android:src="@drawable/ic_back_arrow"
+                    android:contentDescription="Atrás"
+                    />
 
-                </androidx.appcompat.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -130,11 +133,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:src="@drawable/perro_detalle_cita" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/perro_detalle_cita" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -172,4 +175,6 @@
 
         </RelativeLayout>
 
-</layout>
+</RelativeLayout>
+
+
