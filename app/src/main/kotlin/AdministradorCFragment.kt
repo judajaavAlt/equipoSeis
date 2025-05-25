@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.equiposeis.databinding.FragmentAdministradorCitasBinding
 import android.widget.TextView
 import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 
 class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
@@ -49,6 +50,10 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
         for (cita in listaCitas) {
             agregarCitaAVista(cita)
         }
+
+        binding.fab.setOnClickListener {
+            findNavController().navigate(R.id.action_administradorCFragment_to_CrearCitasFragment)
+        }
     }
 
     // Función para agregar dinámicamente cada vista
@@ -63,10 +68,11 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
         nombreMascota.text = cita.nombre
         sintomaMascota.text = cita.sintoma
         turnoMascota.text = "#${cita.id}"
-        imagenMascota.setImageResource(R.drawable.perro) // O el que tengas
+        imagenMascota.setImageResource(R.drawable.perro_detalle_cita) // O el que tengas
 
         binding.listaCitasContainer.addView(itemView)
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
