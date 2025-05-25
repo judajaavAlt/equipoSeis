@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/CrearCitasFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -18,9 +18,16 @@
         android:name="com.equiposeis.AdministradorCFragment"
         tools:layout="@layout/fragment_administrador_citas" />
     <fragment
+        android:id="@+id/CrearCitasFragment"
+        android:name="com.equiposeis.CrearCitaFragment"
+        tools:layout="@layout/fragment_crear_cita" >
+        <action
+            android:id="@+id/action_CrearCitasFragment_to_administradorCFragment"
+            app:destination="@id/administradorCFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/detalleCitaFragment"
         android:name="com.equiposeis.DetalleCitaFragment"
         android:label="DetalleCitaFragment"
         tools:layout="@layout/fragment_detalle_cita">
-    </fragment>
 </navigation>
