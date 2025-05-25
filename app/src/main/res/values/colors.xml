@@ -4,4 +4,6 @@
     <color name="login_colorT">#FEFEFE</color>
     <color name="buttons_color">#EE575F</color>
     <color name="bg_color">#FAF5FF</color>
+    <color name="boldfont_color">#4d4d4d</color>
+    <color name="font_color">#666666</color>
 </resources>
