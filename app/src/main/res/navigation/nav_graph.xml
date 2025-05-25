@@ -25,4 +25,9 @@
             android:id="@+id/action_CrearCitasFragment_to_administradorCFragment"
             app:destination="@id/administradorCFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detalleCitaFragment"
+        android:name="com.equiposeis.DetalleCitaFragment"
+        android:label="DetalleCitaFragment"
+        tools:layout="@layout/fragment_detalle_cita">
 </navigation>
