@@ -29,5 +29,5 @@
         android:id="@+id/detalleCitaFragment"
         android:name="com.equiposeis.DetalleCitaFragment"
         android:label="DetalleCitaFragment"
-        tools:layout="@layout/fragment_detalle_cita">
+        tools:layout="@layout/fragment_detalle_cita"/>
 </navigation>
