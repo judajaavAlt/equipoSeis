@@ -38,6 +38,8 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
         lifecycleScope.launch(Dispatchers.IO) {
             val existingPets = petDao.getAllPets()
+
+            /*
             if (existingPets.isEmpty()) {
                 val nuevaMascota = Pet(
                     petName = "Firulais",
@@ -48,6 +50,7 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
                 )
                 petDao.insert(nuevaMascota)
             }
+            */
 
             val listaCitas = petDao.getAllPets()
 
