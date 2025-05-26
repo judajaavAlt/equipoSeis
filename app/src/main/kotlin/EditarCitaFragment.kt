@@ -26,7 +26,7 @@ class EditarCitaFragment: Fragment(R.layout.fragment_editar_cita)
         super.onViewCreated(view, savedInstanceState)
         // Setup the return button
         binding.returnButton.setOnClickListener {
-            findNavController().navigate(R.id.action_editarCitaFragment_to_administradorCFragment)
+            findNavController().navigate(R.id.action_editarCitaFragment_to_detalleCitaFragment)
         }
         //
 
