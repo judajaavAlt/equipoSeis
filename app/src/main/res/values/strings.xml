@@ -2,6 +2,7 @@
     <string name="login_title">DogApp</string>
     <string name="hola">Hola soy el administrador de citas</string>
     <string name="nueva_cita">Nueva Cita</string>
+    <string name="editar_cita">Editar Cita</string>
     <string name="nombre_de_la_mascota">Nombre de la mascota</string>
     <string name="raza">Raza</string>
     <string name="nombre_del_propietario">Nombre del propietario</string>

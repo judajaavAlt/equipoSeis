@@ -20,7 +20,11 @@
         <action
             android:id="@+id/action_administradorCFragment_to_CrearCitasFragment"
             app:destination="@id/CrearCitasFragment" />
+        <action
+            android:id="@+id/action_administradorCFragment_to_detalleCitaFragment"
+            app:destination="@id/detalleCitaFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/CrearCitasFragment"
         android:name="com.equiposeis.CrearCitaFragment"
@@ -29,9 +33,20 @@
             android:id="@+id/action_CrearCitasFragment_to_administradorCFragment"
             app:destination="@id/administradorCFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/detalleCitaFragment"
         android:name="com.equiposeis.DetalleCitaFragment"
         android:label="DetalleCitaFragment"
         tools:layout="@layout/fragment_detalle_cita"/>
+
+    <fragment
+        android:id="@+id/editarCitaFragment"
+        android:name="com.equiposeis.EditarCitaFragment"
+        tools:layout="@layout/fragment_editar_cita">
+        <action
+            android:id="@+id/action_editarCitaFragment_to_detalleCitaFragment"
+            app:destination="@id/detalleCitaFragment" />
+    </fragment>
+
 </navigation>
