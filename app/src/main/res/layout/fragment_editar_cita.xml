@@ -48,7 +48,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/petsNameInput"/>
+            android:id="@+id/petsNameInput"
+            android:maxLength="15"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--Breed-->
@@ -89,7 +90,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="30"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -106,7 +108,9 @@ android:layout_marginHorizontal="16dp"
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="10"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
