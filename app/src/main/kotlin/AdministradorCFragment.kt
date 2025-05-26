@@ -79,7 +79,7 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
         imagenMascota.setImageResource(R.drawable.perro_detalle_cita)
 
         itemView.setOnClickListener {
-            findNavController().navigate(R.id.action_administradorCFragment_to_CrearCitasFragment)
+            findNavController().navigate(R.id.action_administradorCFragment_to_detalleCitaFragment)
         }
 
         binding.listaCitasContainer.addView(itemView)
