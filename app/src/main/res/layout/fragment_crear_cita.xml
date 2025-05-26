@@ -46,6 +46,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:maxLength="15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/petsNameInput"/>
@@ -67,11 +68,12 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <AutoCompleteTextView
+            android:id="@+id/breedAutoComplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:inputType="none"
+            android:inputType="text"
             android:background="@null"
             android:padding="16dp"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -88,6 +90,8 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ownerNameInput"
+            android:maxLength="30"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -99,12 +103,14 @@
         android:layout_height="wrap_content"
         android:hint="@string/telefono"
         android:textColorHint="@android:color/black"
-android:layout_marginHorizontal="16dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         app:boxBackgroundMode="outline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneInput"
+            android:maxLength="10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -112,12 +118,10 @@ android:layout_marginHorizontal="16dp"
 
     <!--Sympthoms Dropdown-->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/symptoms_dropdown"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
-        android:hint="@string/sintomas"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="dropdown_menu"
@@ -127,7 +131,7 @@ android:layout_marginHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent">
 
         <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
+            android:id="@+id/symptoms_dropdown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -150,14 +154,16 @@ android:layout_marginHorizontal="16dp"
         android:backgroundTint="@null"
         android:background="@drawable/button"
         android:drawableStart="@drawable/ic_diskette"
+        android:drawableTint="@color/button_color"
         android:gravity="center_vertical"
         android:paddingLeft="30dp"
         android:paddingTop="7dp"
         android:paddingRight="30dp"
         android:paddingBottom="7dp"
         android:text="@string/guardar_cita"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/button_color"
         android:textSize="16sp"
+        android:enabled="false"
         tools:layout_editor_absoluteX="60dp"
         tools:layout_editor_absoluteY="190dp" />
 </LinearLayout>
