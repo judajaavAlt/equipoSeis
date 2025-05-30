@@ -2,6 +2,7 @@ package com.equiposeis.api
 
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Url
 
 data class BreedsResponse(
     val message: Map<String, List<String>>,
@@ -17,6 +18,6 @@ interface DogApiService {
     @GET("breeds/list/all")
     suspend fun getAllBreeds(): BreedsResponse
 
-    @GET("breeds/{breed}/images/random")
-    suspend fun getRandomImageForBreed(@Path("breed") breed: String): RandomImageResponse
+    @GET
+    suspend fun getRandomImageForBreed(@Url url: String): RandomImageResponse
 }

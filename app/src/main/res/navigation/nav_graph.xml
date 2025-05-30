@@ -38,7 +38,11 @@
         android:id="@+id/detalleCitaFragment"
         android:name="com.equiposeis.DetalleCitaFragment"
         android:label="DetalleCitaFragment"
-        tools:layout="@layout/fragment_detalle_cita"/>
+        tools:layout="@layout/fragment_detalle_cita">
+        <action
+            android:id="@+id/action_detalleCitaFragment_to_administradorCFragment"
+            app:destination="@id/administradorCFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/editarCitaFragment"
