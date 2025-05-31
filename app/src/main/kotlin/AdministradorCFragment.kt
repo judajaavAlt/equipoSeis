@@ -10,6 +10,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.core.app.ActivityCompat
+import androidx.activity.OnBackPressedCallback
 import com.equiposeis.database.AppDatabase
 import com.equiposeis.database.MyApplication
 import com.equiposeis.database.Pet
@@ -34,6 +36,17 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Manejo del botón de retroceso
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    // Cierra completamente la actividad
+                    requireActivity().finishAffinity()
+                }
+            }
+        )
 
         val context = requireContext().applicationContext
         val petDao = MyApplication.database.petDao()
