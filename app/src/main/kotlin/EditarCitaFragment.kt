@@ -23,7 +23,6 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
     private var _binding: FragmentEditarCitaBinding? = null
     private val binding get() = _binding!!
 
-    // Función para parsear razas (igual que en CrearCitaFragment)
     private fun parseDogBreeds(breedsMap: Map<String, List<String>>): List<String> {
         val breedsList = mutableListOf<String>()
         for ((breed, subBreeds) in breedsMap) {
@@ -38,6 +37,28 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
         return breedsList
     }
 
+    fun checkForm()
+    {
+        lifecycleScope.launch {
+            try {
+                val response = MyApplication.dogApiService.getAllBreeds()
+                if (response.status == "success") {
+                    val breeds = parseDogBreeds(response.message)
+                    val allFieldsFilled = listOf(
+                        binding.petsNameInput.text?.toString()?.trim()?.isNotEmpty() == true,
+                        binding.breedAutoComplete.text?.toString() in breeds,
+                        binding.ownerNameInput.text?.toString()?.trim()?.isNotEmpty() == true,
+                        binding.phoneInput.text?.toString()?.trim()?.isNotEmpty() == true,
+                    ).all { it }
+                    binding.guardarCitaButton.isEnabled = allFieldsFilled
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                // Show error message
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,13 +70,13 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Setup the return button
+        binding.returnButton.setOnClickListener {
+            findNavController().navigate(R.id.action_editarCitaFragment_to_detalleCitaFragment)
+        }
 
-        setupBreedAutoComplete()
-    }
-
-    private fun setupBreedAutoComplete() {
-        val breedAutoComplete = binding.breedAutoComplete
-
+        //pet's breed
+        val breed = binding.breedAutoComplete
         lifecycleScope.launch {
             try {
                 val response = MyApplication.dogApiService.getAllBreeds()
@@ -66,13 +87,31 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
                         android.R.layout.simple_dropdown_item_1line,
                         breeds
                     )
-                    breedAutoComplete.setAdapter(adapter)
-                    breedAutoComplete.threshold = 2 // Mostrar sugerencias tras 2 letras
+                    breed.setAdapter(adapter)
+                    breed.threshold = 2
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+                // Show error message
             }
         }
+
+        // Check form completion
+        binding.petsNameInput.addTextChangedListener {
+            checkForm()
+        }
+        binding.breedAutoComplete.addTextChangedListener {
+            checkForm()
+        }
+        binding.ownerNameInput.addTextChangedListener {
+            checkForm()
+        }
+        binding.phoneInput.addTextChangedListener {
+            checkForm()
+        }
+
+        // Button Finish
+
     }
 
     override fun onDestroyView() {
