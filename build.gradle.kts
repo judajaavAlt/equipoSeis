@@ -37,6 +37,16 @@ android {
     }
 }
 
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7")
+    }
+}
+
 dependencies {
     val roomVersion = "2.7.1"
     implementation("androidx.room:room-runtime:$roomVersion")
