@@ -40,20 +40,6 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
         lifecycleScope.launch(Dispatchers.IO) {
             val existingPets = petDao.getAllPets()
-
-
-//            if (existingPets.isEmpty()) {
-//                val nuevaMascota = Pet(
-//                    petName = "Firulais",
-//                    petBreed = "Labrador",
-//                    ownerName = "Carlos",
-//                    phoneNumber = "3012345678",
-//                    symptoms = "Cojea de la pata izquierda"
-//                )
-//                petDao.insert(nuevaMascota)
-//            }
-
-
             val listaCitas = petDao.getAllPets()
 
             withContext(Dispatchers.Main) {
@@ -103,19 +89,27 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
         }
 
         itemView.setOnClickListener {
-            findNavController().navigate(R.id.action_administradorCFragment_to_detalleCitaFragment)
+            val action = AdministradorCFragmentDirections
+                .actionAdministradorCFragmentToEditarCitaFragment(pet.id)
+            findNavController().navigate(action)
         }
+//            val action = AdministradorCFragmentDirections
+//                .actionAdministradorCFragmentToDetalleCitaFragment(pet.id)
+//            findNavController().navigate(action)        }
 
         binding.listaCitasContainer.addView(itemView)
     }
 
     // Convierte "labrador retriever" → "retriever/labrador" o "labrador" según API
     private fun buildBreedImageUrl(breedInput: String): String {
-        val parts = breedInput.lowercase().split(" ")
-        return if (parts.size == 2) {
-            "breed/${parts[1]}/${parts[0]}/images/random"
+        val fullBreed = breedInput.split(" ")
+        val breed = fullBreed[0]
+        val subBreed = if (fullBreed.size > 1) fullBreed[1] else ""
+
+        return if (subBreed.isNotEmpty()) {
+            "breed/$breed/$subBreed/images/random"
         } else {
-            "breed/${parts[0]}/images/random"
+            "breed/$breed/images/random"
         }
     }
 }
