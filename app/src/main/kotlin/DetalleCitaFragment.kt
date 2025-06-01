@@ -76,6 +76,9 @@ class DetalleCitaFragment : Fragment() {
         binding.btnVolverDetalleCita.setOnClickListener {
             findNavController().navigate(R.id.action_detalleCitaFragment_to_administradorCFragment)
         }
+        binding.BtnEditarCita.setOnClickListener {
+            findNavController().navigate(R.id.action_detalleCitaFragment_to_editarCitaFragment)
+        }
     }
 
     override fun onDestroyView() {

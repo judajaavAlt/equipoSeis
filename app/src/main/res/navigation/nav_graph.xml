@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_detalleCitaFragment_to_administradorCFragment"
             app:destination="@id/administradorCFragment" />
+        <action
+            android:id="@+id/action_detalleCitaFragment_to_editarCitaFragment"
+            app:destination="@id/editarCitaFragment" />
     </fragment>
 
     <fragment
