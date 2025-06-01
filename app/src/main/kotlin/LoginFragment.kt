@@ -10,8 +10,8 @@ import android.widget.VideoView
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.NavOptions
 import com.equiposeis.databinding.FragmentLoginBinding
 import java.util.concurrent.Executor
 
@@ -42,7 +42,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             object: BiometricPrompt.AuthenticationCallback(){
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    findNavController().navigate(R.id.action_loginFragment_to_AdministradorCFragment)
+                    findNavController().navigate(
+                        R.id.action_loginFragment_to_AdministradorCFragment,
+                        null,
+                        NavOptions.Builder()
+                            .setPopUpTo(R.id.loginFragment, true) // Limpia toda la pila
+                            .build()
+                    )
                 }
                 override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                     super.onAuthenticationError(errorCode, errString)

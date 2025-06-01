@@ -52,14 +52,15 @@
             android:maxLength="15"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Breed-->
+    <!-- Breed -->
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/breedInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/raza"
         android:layout_marginHorizontal="16dp"
-        android:textColorHint="@android:color/black"
         android:layout_marginTop="32dp"
+        android:textColorHint="@color/black"
         app:boxBackgroundMode="outline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,15 +68,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:inputType="none"
-            android:background="@null"
-            android:padding="16dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    <AutoCompleteTextView
+        android:id="@+id/breedAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:inputType="text"
+        android:background="@null"
+        android:padding="16dp"/>
+</com.google.android.material.textfield.TextInputLayout>
 
     <!--Owner's name-->
     <com.google.android.material.textfield.TextInputLayout
@@ -89,6 +91,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ownerNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="30"/>
@@ -107,6 +110,7 @@ android:layout_marginHorizontal="16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
