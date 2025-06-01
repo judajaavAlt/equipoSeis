@@ -28,7 +28,7 @@ class DetalleCitaFragment : Fragment() {
         _binding = FragmentDetalleCitaBinding.inflate(inflater, container, false)
         lifecycleScope.launch {
             try {
-                val perro = petDao.getPetById(2)
+                val perro = petDao.getPetById(3)
                 val razaPerro = binding.razaPerro
                 val sintomaMascota = binding.sintomasPerro
                 val turnoMascota = binding.turnoCita
@@ -44,8 +44,9 @@ class DetalleCitaFragment : Fragment() {
                 telefonoPropietario.text = perro?.phoneNumber
 
 
-                val PetBreed = perro?.petBreed
-                val (breed, subBreed) = PetBreed!!.split(" ")
+                val fullBreed = perro?.petBreed!!.split(" ")
+                val breed = fullBreed[0]
+                val subBreed = if (fullBreed.size > 1) fullBreed[1] else ""
 
                 val endpoint = if (subBreed.isNotEmpty()) {
                     "breed/$breed/$subBreed/images/random"
