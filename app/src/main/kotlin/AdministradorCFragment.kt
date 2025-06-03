@@ -103,12 +103,9 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
         itemView.setOnClickListener {
             val action = AdministradorCFragmentDirections
-                .actionAdministradorCFragmentToEditarCitaFragment(pet.id)
+                .actionAdministradorCFragmentToDetalleCitaFragment(pet.id)
             findNavController().navigate(action)
         }
-//            val action = AdministradorCFragmentDirections
-//                .actionAdministradorCFragmentToDetalleCitaFragment(pet.id)
-//            findNavController().navigate(action)        }
 
         binding.listaCitasContainer.addView(itemView)
     }
