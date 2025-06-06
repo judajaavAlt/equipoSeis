@@ -90,6 +90,7 @@ class DetalleCitaFragment : Fragment() {
             lifecycleScope.launch {
                 val perro = petDao.getPetById(petId)
                 petDao.delete(perro!!.copy())
+                viewModel.triggerListRefresh()
             }
             findNavController().navigate(R.id.action_detalleCitaFragment_to_administradorCFragment)
         }
