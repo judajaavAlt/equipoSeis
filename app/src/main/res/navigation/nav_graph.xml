@@ -66,6 +66,10 @@
         <action
             android:id="@+id/action_editarCitaFragment_to_detalleCitaFragment"
             app:destination="@id/detalleCitaFragment" />
+
+        <action
+            android:id="@+id/action_editarCitaFragment_to_administradorCFragment"
+            app:destination="@id/administradorCFragment" />
     </fragment>
 
 </navigation>

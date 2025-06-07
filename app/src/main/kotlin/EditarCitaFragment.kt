@@ -158,9 +158,7 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
                     MyApplication.database.petDao().update(updatedPet)
                     Toast.makeText(requireContext(), "Cita actualizada correctamente", Toast.LENGTH_SHORT).show()
 
-                    val action = EditarCitaFragmentDirections
-                        .actionEditarCitaFragmentToDetalleCitaFragment(petId)
-                    findNavController().navigate(action)
+                    findNavController().navigate(R.id.action_editarCitaFragment_to_administradorCFragment)
                 }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), "Error al actualizar", Toast.LENGTH_SHORT).show()
