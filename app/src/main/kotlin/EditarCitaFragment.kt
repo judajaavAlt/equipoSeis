@@ -53,7 +53,9 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
 
         // Botón de regreso
         binding.returnButton.setOnClickListener {
-            findNavController().navigate(R.id.action_editarCitaFragment_to_detalleCitaFragment)
+            val action = EditarCitaFragmentDirections
+                .actionEditarCitaFragmentToDetalleCitaFragment(args.petId)
+            findNavController().navigate(action)
         }
 
         // Autocompletado de razas
@@ -155,13 +157,13 @@ class EditarCitaFragment : Fragment(R.layout.fragment_editar_cita) {
 
                     MyApplication.database.petDao().update(updatedPet)
                     Toast.makeText(requireContext(), "Cita actualizada correctamente", Toast.LENGTH_SHORT).show()
-                    findNavController().navigateUp()
-                } else {
-                    Toast.makeText(requireContext(), "Error: Mascota no encontrada", Toast.LENGTH_SHORT).show()
+
+                    val action = EditarCitaFragmentDirections
+                        .actionEditarCitaFragmentToDetalleCitaFragment(petId)
+                    findNavController().navigate(action)
                 }
             } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(requireContext(), "Error al actualizar la cita", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Error al actualizar", Toast.LENGTH_SHORT).show()
             }
         }
     }
