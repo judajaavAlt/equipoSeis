@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,6 +20,7 @@ class DetalleCitaFragment : Fragment() {
     private val binding get() = _binding!!
     private val dogApi = MyApplication.dogApiService
     private val args: DetalleCitaFragmentArgs by navArgs()
+    private val viewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -90,6 +92,7 @@ class DetalleCitaFragment : Fragment() {
             lifecycleScope.launch {
                 val perro = petDao.getPetById(petId)
                 petDao.delete(perro!!.copy())
+                viewModel.triggerListRefresh()
             }
             findNavController().navigate(R.id.action_detalleCitaFragment_to_administradorCFragment)
         }
