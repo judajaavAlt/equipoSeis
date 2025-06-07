@@ -20,6 +20,7 @@ class DetalleCitaFragment : Fragment() {
     private val binding get() = _binding!!
     private val dogApi = MyApplication.dogApiService
     private val args: DetalleCitaFragmentArgs by navArgs()
+    private val viewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

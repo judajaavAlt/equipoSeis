@@ -27,6 +27,7 @@ class AdministradorCFragment : Fragment(R.layout.fragment_administrador_citas) {
 
     private var _binding: FragmentAdministradorCitasBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
