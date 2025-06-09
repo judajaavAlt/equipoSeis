@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.equiposeis.database.MyApplication
-import com.equiposeis.database.Pet
 import com.equiposeis.databinding.FragmentDetalleCitaBinding
 import kotlinx.coroutines.launch
 
@@ -56,8 +55,8 @@ class DetalleCitaFragment : Fragment() {
                 sintomaMascota.text = perro?.symptoms
                 turnoMascota.text = "#${perro?.id}"
                 razaPerro.text = perro?.petBreed
-                propietario.text = perro?.ownerName
-                telefonoPropietario.text = perro?.phoneNumber
+                propietario.text = "Propietario: ${perro?.ownerName ?: "No disponible"}"
+                telefonoPropietario.text = "Teléfono: ${perro?.phoneNumber ?: "No disponible"}"
 
 
                 val fullBreed = perro?.petBreed!!.split(" ")
