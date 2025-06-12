@@ -3,14 +3,14 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
     card_view:cardCornerRadius="16dp"
-    card_view:cardElevation="6dp">
+    card_view:cardElevation="6dp"
+    card_view:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
+        android:layout_height="80dp"
+        android:padding="8dp"
         android:background="@android:color/white">
 
         <!-- Imagen de la mascota -->
@@ -19,7 +19,7 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/perro_detalle_cita"
+            android:src="@drawable/perro_default"
             android:background="@drawable/circle_background"
             android:clipToOutline="true"
             android:outlineProvider="background" />
