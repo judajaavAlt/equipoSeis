@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFFFF"/>
+            <elevation android:height="4dp"/>
+        </shape>
+    </item>
+</selector>

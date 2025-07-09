@@ -1,17 +1,27 @@
 package com.equiposeis
 
+
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.VideoView
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.NavOptions
 import com.equiposeis.databinding.FragmentLoginBinding
+import java.util.concurrent.Executor
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+    private lateinit var executor: Executor
+    private lateinit var biometricPrompt: BiometricPrompt
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,22 +34,46 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonLogin.setOnClickListener {
-            val username = binding.editTextUsername.text.toString()
-            val password = binding.editTextPassword.text.toString()
+        executor = ContextCompat.getMainExecutor(requireContext())
 
-            if (username == "admin" && password == "1234") {
-                Toast.makeText(requireContext(), "Login exitoso", Toast.LENGTH_SHORT).show()
-                // Navega al siguiente fragmento
-                // findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-            } else {
-                Toast.makeText(requireContext(), "Credenciales inválidas", Toast.LENGTH_SHORT).show()
-            }
+        biometricPrompt = BiometricPrompt(
+            requireActivity()
+            ,executor,
+            object: BiometricPrompt.AuthenticationCallback(){
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    findNavController().navigate(
+                        R.id.action_loginFragment_to_AdministradorCFragment,
+                        null,
+                        NavOptions.Builder()
+                            .setPopUpTo(R.id.loginFragment, true) // Limpia toda la pila
+                            .build()
+                    )
+                }
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                }
+
+            })
+
+        val promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Autenticación con Biometría")
+            .setSubtitle("Ingrese su huella digital")
+            .setNegativeButtonText("Cancelar")
+            .build()
+
+        binding.fingerprintLogin.setOnClickListener{
+            biometricPrompt.authenticate(promptInfo)
         }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
+
+
+

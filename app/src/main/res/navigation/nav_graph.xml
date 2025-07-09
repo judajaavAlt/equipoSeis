@@ -7,6 +7,69 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.equiposeis.LoginFragment"
-        android:label="Login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_AdministradorCFragment"
+            app:destination="@id/administradorCFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/administradorCFragment"
+        android:name="com.equiposeis.AdministradorCFragment"
+        tools:layout="@layout/fragment_administrador_citas" >
+        <action
+            android:id="@+id/action_administradorCFragment_to_CrearCitasFragment"
+            app:destination="@id/CrearCitasFragment" />
+
+        <action
+            android:id="@+id/action_administradorCFragment_to_detalleCitaFragment"
+            app:destination="@id/detalleCitaFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/CrearCitasFragment"
+        android:name="com.equiposeis.CrearCitaFragment"
+        tools:layout="@layout/fragment_crear_cita" >
+        <action
+            android:id="@+id/action_CrearCitasFragment_to_administradorCFragment"
+            app:destination="@id/administradorCFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleCitaFragment"
+        android:name="com.equiposeis.DetalleCitaFragment"
+        android:label="DetalleCitaFragment"
+        tools:layout="@layout/fragment_detalle_cita">
+
+        <argument
+            android:name="petId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_detalleCitaFragment_to_administradorCFragment"
+            app:destination="@id/administradorCFragment" />
+        <action
+            android:id="@+id/action_detalleCitaFragment_to_editarCitaFragment"
+            app:destination="@id/editarCitaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarCitaFragment"
+        android:name="com.equiposeis.EditarCitaFragment"
+        tools:layout="@layout/fragment_editar_cita">
+
+        <argument
+            android:name="petId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_editarCitaFragment_to_detalleCitaFragment"
+            app:destination="@id/detalleCitaFragment" />
+
+        <action
+            android:id="@+id/action_editarCitaFragment_to_administradorCFragment"
+            app:destination="@id/administradorCFragment" />
+    </fragment>
+
 </navigation>
