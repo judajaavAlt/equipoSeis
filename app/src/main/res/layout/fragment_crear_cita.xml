@@ -41,7 +41,6 @@
         android:hint="@string/nombre_de_la_mascota"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
-        android:textColorHint="@android:color/black"
         app:boxBackgroundMode="outline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -58,7 +57,6 @@
         android:layout_height="wrap_content"
         android:hint="@string/raza"
         android:layout_marginHorizontal="16dp"
-        android:textColorHint="@android:color/black"
         android:layout_marginTop="32dp"
         app:boxBackgroundMode="outline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -83,7 +81,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/nombre_del_propietario"
-        android:textColorHint="@android:color/black"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         app:boxBackgroundMode="outline"
@@ -102,7 +99,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/telefono"
-        android:textColorHint="@android:color/black"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         app:boxBackgroundMode="outline"
